@@ -1,0 +1,52 @@
+.cart-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: "Fira Code", monospace;
+
+  &--empty {
+    margin-top: 100px;
+  }
+
+  &__title {
+    color: #ffff;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 4rem;
+  }
+  &__list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__summary {
+    margin-top: 5rem;
+  }
+  &__total {
+    color: #ffff;
+
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .btn {
+    padding: 4px 10px;
+    border: 3px solid #161616;
+    border-radius: 6px;
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+    transition: 1.2s ease;
+
+    &:hover {
+      background: rgba(#fff, 0.08);
+    }
+    &:active {
+      background: rgba(#fff, 0.15);
+    }
+    &--accent {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

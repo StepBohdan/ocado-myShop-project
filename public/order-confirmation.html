@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./shop.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Zamówienie złożone</title>
+  <style>
+    body {
+      font-family: "Fira Code", monospace;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .order-box {
+      background: white;
+      color: black;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5rem 0;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 2rem;
+      text-align: right;
+    }
+
+    a {
+      margin-top: 2rem;
+      display: inline-block;
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="order-box">
+    <h1>Zamówienie złożone pomyślnie!</h1>
+    <div id="summary"></div>
+    <div class="total" id="total"></div>
+    <a href="./">← Wróć do produktów</a>
+  </div>
+
+
+  <script type="module">
+    const container = document.getElementById("summary")
+    const totalBlock = document.getElementById("total")
+    const raw = localStorage.getItem("order")
+    const order = raw ? JSON.parse(raw) : []
+
+    if (order.length === 0) {
+      container.innerHTML = "<p>Brak danych o zamówieniu.</p>"
+    } else {
+      let total = 0
+
+      order.forEach(item => {
+        const price = item.price.main * 100 + item.price.fractional
+        const sum = price * item.qty
+        total += sum
+
+        const row = document.createElement("div")
+        row.className = "row"
+        row.innerHTML = `
+          <span>${item.name} x${item.qty}</span>
+          <span>${(sum / 100).toFixed(2).replace(".", ",")} zł</span>
+        `
+        container.appendChild(row)
+      })
+
+      totalBlock.textContent = `Łącznie: ${(total / 100).toFixed(2).replace(".", ",")} zł`
+    }
+    localStorage.setItem("cart", JSON.stringify([]))
+  </script>
+</body>
+</html>
