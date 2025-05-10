@@ -57,11 +57,17 @@
     <h1>Zamówienie złożone pomyślnie!</h1>
     <div id="summary"></div>
     <div class="total" id="total"></div>
-    <a href="./">← Wróć do produktów</a>
+    <a id="back-link" href="/">← Wróć do produktów</a>
   </div>
 
 
   <script type="module">
+
+document.getElementById("back-link").setAttribute(
+    "href",
+    import.meta.env.BASE_URL || "./"
+  );
+
     const container = document.getElementById("summary")
     const totalBlock = document.getElementById("total")
     const raw = localStorage.getItem("order")
