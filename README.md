@@ -1,4 +1,6 @@
-# 🛒 Ocado MyShop Project
+
+
+# 🛒 Ocado MyShop Project (Bohdan_Stepanenko_Web_Wrocław)
 
 **Ocado MyShop** is a lightweight application built with **React + Vite**.  
 It allows users to browse products, manage a cart, and place an order with a clear.
