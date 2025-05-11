@@ -3,7 +3,7 @@
 **Ocado MyShop** is a lightweight application built with **React + Vite**.  
 It allows users to browse products, manage a cart, and place an order with a clear.
 
-This project was created as part of a recruitment task. It emphasizes clarity, state separation, modern practices (hooks, Context API), and production-aware deployment (GitHub Pages).
+This project was created as part of a recruitment task. It emphasizes clarity, state separation, modern practices (hooks, Context API), and production-aware deployment ([GitHub Pages](https://stepbohdan.github.io/ocado-myShop-project/)).
 
 ---
 
