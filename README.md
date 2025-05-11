@@ -68,20 +68,27 @@ The application is divided into sections:
 
 ## 🚀 How to run the app locally
 
-### 1. Install dependencies
+### 1. Clone the repository
+```bash
+git clone https://github.com/StepBohdan/ocado-myShop-project.git
+```
+### 2. Change directory 
+```bash
+cd ocado-myShop-project
+```
 
+### 3. Install dependencies
 ```bash
 npm install
 ```
-
-### 2. Run the development server
+### 4. Run the development server
 ```bash
 npm run dev
 ```
 The server will be availiable on:
 http://localhost:5173/
 
-### 3. Build for production
+### ! Build for production
 ```bash
 npm run build
 npm run preview
